@@ -1,5 +1,5 @@
 # Pong for NES :video_game:
-> Attempting to build pong, once byte at a time.
+> Attempting to build pong, one byte at a time.
 
 ## How to use
 1. edit the assembly file with content changes: `src/pong.asm`
