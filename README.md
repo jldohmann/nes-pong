@@ -1,4 +1,4 @@
-# Pong for NES
+# Pong for NES :video_game:
 > Attempting to build pong, once byte at a time.
 
 ## How to use
