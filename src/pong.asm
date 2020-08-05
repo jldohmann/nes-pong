@@ -28,7 +28,7 @@ vblankwait:
   STX $2006
   LDX #$00
   STX $2006
-  LDA #$29
+  LDA #$0f
   STA $2007
   LDA #%00011110
   STA $2001
