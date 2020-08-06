@@ -24,11 +24,11 @@ vblankwait:
 
 .proc main
   LDX $2002
-  LDX #$3f
+  LDX #$3f  ; "load the X register with the hex value $3f"
   STX $2006
   LDX #$00
   STX $2006
-  LDA #$0f
+  LDA #$0f  ; "load accmulator": use this color as bg
   STA $2007
   LDA #%00011110
   STA $2001
