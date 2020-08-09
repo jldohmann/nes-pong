@@ -23,14 +23,14 @@ vblankwait:
 .endproc
 
 .proc main
-  LDX $2002
-  LDX #$3f  ; "load the X register with the hex value $3f"
+  LDX $2002 ; check status of PPU
+  LDX #$3f  ; load the X register with hex value $3f; high byte for PPU palette
   STX $2006
-  LDX #$00
+  LDX #$00  ; load the X register with hex value $00; low byte for PPU palette
   STX $2006
-  LDA #$0f  ; "load accmulator": use this color as bg
+  LDA #$0f  ; load accmulator: use this color (black) as bg
   STA $2007
-  LDA #%00011110
+  LDA #%00011110  ; set bit flags; enable fg and bg with corresponding left edges
   STA $2001
 forever:
   JMP forever
