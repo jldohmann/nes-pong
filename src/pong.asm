@@ -1,5 +1,5 @@
-.segment "HEADER"
-.byte "NES", 26, 2, 1, 0, 0
+.include "constants.inc"
+.include "header.inc"
 
 .segment "CODE"
 .proc irq_handler
@@ -10,28 +10,19 @@
   RTI
 .endproc
 
-.proc reset_handler
-  SEI
-  CLD
-  LDX #$00
-  STX $2000
-  STX $2001
-vblankwait:
-  BIT $2002
-  BPL vblankwait
-  JMP main
-.endproc
+.import reset_handler
 
+.export main
 .proc main
-  LDX $2002 ; check status of PPU
+  LDX PPUSTATUS ; check status of PPU
   LDX #$3f  ; load the X register with hex value $3f; high byte for PPU palette
-  STX $2006
+  STX PPUADDR
   LDX #$00  ; load the X register with hex value $00; low byte for PPU palette
-  STX $2006
+  STX PPUADDR
   LDA #$0f  ; load accmulator: use this color (black) as bg
-  STA $2007
+  STA PPUDATA
   LDA #%00011110  ; set bit flags; enable fg and bg with corresponding left edges
-  STA $2001
+  STA PPUMASK
 forever:
   JMP forever
 .endproc
@@ -39,6 +30,5 @@ forever:
 .segment "VECTORS"
 .addr nmi_handler, reset_handler, irq_handler
 
-.segment "CHARS"
+.segment "CHR"
 .res 8192
-.segment "STARTUP"

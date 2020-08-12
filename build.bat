@@ -1,3 +1,4 @@
 @echo off
 c:\cc65\bin\ca65 src\pong.asm
-c:\cc65\bin\ld65 src\pong.o -t nes -o pong.nes
+c:\cc65\bin\ca65 src\reset.asm
+c:\cc65\bin\ld65 src\pong.o src\reset.o -C nes.cfg -o pong.nes
