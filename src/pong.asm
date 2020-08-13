@@ -14,12 +14,12 @@
 
 .export main
 .proc main
-  LDX PPUSTATUS ; check status of PPU
-  LDX #$3f  ; load the X register with hex value $3f; high byte for PPU palette
+  LDX PPUSTATUS   ; check status of PPU
+  LDX #$3f        ; load the X register with hex value $3f; high byte for PPU palette
   STX PPUADDR
-  LDX #$00  ; load the X register with hex value $00; low byte for PPU palette
+  LDX #$00        ; load the X register with hex value $00; low byte for PPU palette
   STX PPUADDR
-  LDA #$0f  ; load accmulator: use this color (black) as bg
+  LDA #$0f        ; load accmulator: use this color (black) as bg
   STA PPUDATA
   LDA #%00011110  ; set bit flags; enable fg and bg with corresponding left edges
   STA PPUMASK
