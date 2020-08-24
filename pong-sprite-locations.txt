@@ -1,0 +1,24 @@
+white: #$30
+black: #$0F
+
+left paddle location:
+	nametable offset:			attribute offset:
+	$0101 ($2101, $2501, $2901, $2d01)	$10 ($23d0, $27d0, $2bd0, $2fd0)
+	$0121 ($2121, $2521, $2921, $2d21)	$10 ($23d0, $27d0, $2bd0, $2fd0)
+	$0141 ($2141, $2541, $2941, $2d41)	...
+	$0161 ($2161, $2561, $2961, $2d61)	...
+	$0181 ($2181, $2581, $2981, $2d81)	$18 ($23d8, $27d8, $2bd8, $2fd8)
+	$01a1 ($21a1, $25a1, $29a1, $2da1)	$18 ($23d8, $27d8, $2bd8, $2fd8)
+
+right paddle location:
+	nametable offset:			attribute offset:
+	$011e ($211e, $251e, $291e, $2d1e)	$17 ($23d7, $27d7, $2bd7, $2fd7)
+	$013e ($213e, $253e, $293e, $2d3e)	$17 ($23d7, $27d7, $2bd7, $2fd7)
+	$015e ($215e, $255e, $295e, $2d5e)	...
+	$017e ($217e, $257e, $297e, $2d7e)	...
+	$019e ($219e, $259e, $299e, $2d9e)	$1f ($23df, $27df, $2bdf, $2fdf)
+	$01be ($21be, $25be, $29be, $2dbe)	$1f ($23df, $27df, $2bdf, $2fdf)
+
+ball location:
+	nametable offset:			attribute offset:
+	$016f ($216f, $256f, $296f, $2d6f)	$13, ($23d3, $27d3, $2bd3, $2fd3)

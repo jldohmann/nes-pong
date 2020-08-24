@@ -31,4 +31,5 @@ forever:
 .addr nmi_handler, reset_handler, irq_handler
 
 .segment "CHR"
-.res 8192
+.incbin "pong.chr"
+;.res 8192
