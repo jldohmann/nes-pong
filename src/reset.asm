@@ -4,13 +4,14 @@
 .import main
 .export reset_handler
 .proc reset_handler
-  SEI
-  CLD
+  SEI           ; turn on interrupts
+  CLD           ; turn off non-existent decimal mode
   LDX #$00
-  STX $2000
-  STX $2001
-vblankwait:
-  BIT $2002
+  STX PPUCTRL   ; disable NMI
+  STX PPUMASK   ; turn off display
+
+vblankwait:     ; wait for PPU to fully boot up
+  BIT PPUSTATUS
   BPL vblankwait
   JMP main
 .endproc
